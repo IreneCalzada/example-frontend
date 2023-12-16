@@ -1,0 +1,199 @@
+/* General */
+@import "../styles/fonts.scss";
+@import "../styles/colors.scss";
+
+.navbar-brand {
+    margin-left: 5%;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("../assets/icons/ic_light_pink_menu.svg");
+    width: 21.875px;
+    height: 16.603px;
+    flex-shrink: 0;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+}
+
+
+/* fonts */
+.f-fascinate {
+    font-family: 'fascinate';
+}
+
+.f-avenir {
+    font-family: 'avenir';
+}
+
+/* fonts size*/
+.fs-01 {
+    font-size: 50px;
+}
+
+
+.fw-900 {
+    font-weight: 900 !important;
+}
+
+/* colors */
+.light-pink-color {
+    color: var(--light-pink);
+}
+
+.ultra-light-pink-color {
+    color: var(--ultra-light-pink);
+}
+
+.ultra-light-pink-bg {
+    background-color: var(--ultra-light-pink);
+}
+
+.medium-black-color {
+    color: var(--medium-black);
+}
+
+.double-light-gray-color {
+    color: var(--double-light-gray);
+}
+
+.medium-gray-color {
+    color: var(--medium-gray);
+}
+
+.medium-gray-bg {
+    background-color: var(--medium-gray);
+}
+
+.input-title {
+    color: black;
+    font-family: 'montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 13px;
+}
+
+.form-control {
+    background-color: var(--medium-pink);
+    border-color: var(--medium-pink);
+    display: flex;
+    padding: 12px;
+    align-items: flex-start;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    color: var(--dark-pink);
+}
+
+input.form-control.ng-untouched.ng-pristine.ng-valid {
+    background-color: var(--medium-pink);
+    border-color: var(--medium-pink);
+    color: var(--dark-pink);
+    font-family: 'montserrat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.form-floating>.form-control:focus~label::after,
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-control-plaintext~label::after,
+.form-floating>.form-select~label::after {
+    background-color: transparent;
+}
+
+input.form-control.ng-pristine.ng-valid.ng-touched {
+    background-color: var(--medium-pink);
+}
+
+input.form-control.ng-valid.ng-dirty.ng-touched {
+    color: var(--dark-pink);
+
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-control-plaintext~label,
+.form-floating>.form-select~label {
+    color: black;
+    font-family: 'roboto';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.15px;
+    opacity: 0.6;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(../assets/icons/ic_calendar_gray.svg) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+input.form-control.ng-dirty.ng-valid.ng-touched {
+    background-color: var(--medium-pink);
+}
+
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown),
+.form-floating>.form-control-plaintext:focus,
+.form-floating>.form-control-plaintext:not(:placeholder-shown) {
+    padding-top: 1.625rem;
+    padding-bottom: 1.625rem;
+    background-color: var(--medium-pink) !important;
+}
+
+.btn-cancel {
+    padding: 10px 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    width: 160px;
+    height: 41px;
+    text-transform: uppercase;
+}
+
+.btn-submit {
+    padding: 10px 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    width: 160px;
+    height: 41px;
+    text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 417px) {
+    .fs-01 {
+        font-size: 30px;
+    }
+
+}

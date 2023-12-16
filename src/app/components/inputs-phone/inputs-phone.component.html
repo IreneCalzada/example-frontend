@@ -1,0 +1,17 @@
+<label class="input-title mt-3" for="floatingInputValue">{{title}}</label>
+<div class="row g-2">
+    <div class="col-md">
+        <div class="form-floating mb-3">
+            <input class="form-control"
+                [ngClass]="inputValue.invalid && (inputValue.dirty || inputValue.touched) ? 'is-invalid' : ''"
+                [formControl]="inputValue" name="phone" (input)="fillValue($event)" appPhoneMask
+                type="text" id="phone" />
+            <div *ngIf="inputValue.touched && inputValue.hasError('required')" class="text-sm text-danger">
+                Campo requerido
+            </div>
+            <div *ngIf="inputValue.hasError('pattern')" class="text-sm text-danger">
+                Formato no válido
+            </div>
+        </div>
+    </div>
+</div>

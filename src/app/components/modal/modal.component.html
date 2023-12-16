@@ -1,0 +1,28 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="text-center w-100">
+                    <h5 class="modal-title light-pink-color title-modal" id="exampleModalLabel">MODAL</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center w-100">
+                <div>
+                    <label> Fecha: {{form.value.date | date:"dd MMM yyyy"}}</label>
+                </div>
+                <div>
+                    <label> Teléfono: {{form.value.phone}}</label>
+                </div>
+                <div>
+                    <label> Email: {{form.value.email}}</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn medium-gray-bg btn-submit text-white"
+                    data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-submit" data-bs-dismiss="modal" (click)="sendForm()">ENVIAR DATOS</button>
+            </div>
+        </div>
+    </div>
+</div>

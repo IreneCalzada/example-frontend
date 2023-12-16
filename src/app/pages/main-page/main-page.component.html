@@ -1,0 +1,129 @@
+<div class="div-cover">
+    <header class="header">
+        <section class="bg">
+            <div class="img-cover" [style.color]="'white'">
+                <div>
+                    <img src="../../../assets/icons/ic_circle_stripes_white.svg" alt="">
+                </div>
+                <div class="circle-2">
+                    <img src="../../../assets/icons/ic_circle_void_white.svg" alt="">
+                </div>
+                <div class="circle-3">
+                    <img src="../../../assets/icons/ic_circle_dots_white.svg" alt="">
+                </div>
+                <div class="circle-4">
+                    <img src="../../../assets/icons/ic_circles_stripes_dots_white.svg" alt="">
+                </div>
+                <div class="circle-5">
+                    <img src="../../../assets/icons/ic_circles_stripes_dots_white__right.svg" alt="">
+                </div>
+
+                <div class="div-form position-absolute">
+                    <form class="form-floating" [formGroup]="form" (ngSubmit)="sendForm()" autocomplete="off">
+                        <app-inputs formControlName="date" [text]="'Selecciona la fecha:'" [title]="'Fecha*:'"
+                            [type]="'date'"></app-inputs>
+
+                        <app-inputs-phone formControlName="phone" [title]="'Teléfono*:'"></app-inputs-phone>
+
+                        <app-input-email formControlName="email" [title]="'Email*:'"></app-input-email>
+
+                        <div class="mt-8 flex gap-4 text-end">
+                            <button type="submit" class="flex-1 btn btn-dark btn-submit" [disabled]="form.invalid"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Enviar datos
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </header>
+</div>
+
+<div class="table-class mb-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                role="tab" aria-controls="home" aria-selected="true" (click)="setContents(1)">{{content1}}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                role="tab" aria-controls="profile" aria-selected="false" (click)="setContents(2)">{{content2}}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
+                role="tab" aria-controls="contact" aria-selected="false" disabled>ESTOY DESHABILITADA</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="text-center">
+                <label class="light-pink-color fw-bold lh-base my-5" [ngStyle]="{'font-size': '30px'}"> Soy la tabla de
+                    la pestaña 1 activa </label>
+            </div>
+            <div class="mx-4">
+                <table class="table table-borderless double-light-gray-colorr">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of tableData2; index as i">
+                            <td> {{i+1}} </td>
+                            <td> {{data.date | date:"dd MMM yyyy"}}</td>
+                            <td> {{data.phone}} </td>
+                            <td> {{data.email}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="text-center">
+                <label class="light-pink-color fw-bold lh-base my-5" [ngStyle]="{'font-size': '30px'}">Soy la
+                    tabla de la pestaña 2 activa </label>
+            </div>
+
+            <div class="mx-4">
+                <table class="table table-borderless double-light-gray-colorr">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 1</td>
+                            <td> 08/Dic/2023</td>
+                            <td> 0123456789</td>
+                            <td> prueba1@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td> 2</td>
+                            <td> 15/Dic/2023</td>
+                            <td> 0125478456</td>
+                            <td> prueba2@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td> 25/Dic/2023</td>
+                            <td> 5847514256</td>
+                            <td> prueba3@mail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-modal [form]="form" (newDataEvent)="sendTableData($event)"></app-modal>

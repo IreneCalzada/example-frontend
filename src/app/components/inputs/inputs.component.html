@@ -1,0 +1,15 @@
+<label class="input-title" for="floatingInputValue">{{title}}</label>
+<div class="row g-2">
+    <div class="col-md">
+        <div class="form-floating mb-3">
+            
+            <input class="form-control" [ngClass]="value.invalid && (value.dirty || value.touched) ? 'is-invalid' : ''"
+                [placeholder]="placeholder" [formControl]="value" (input)="fillValue($event)" [type]="type" />
+            <label *ngIf="text" for="floatingInputValue">{{text}}</label>
+
+            <div *ngIf="value.touched && value.hasError('required')" class="text-sm text-danger">
+                Campo requerido
+            </div>
+        </div>
+    </div>
+</div>

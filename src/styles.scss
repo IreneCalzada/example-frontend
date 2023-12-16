@@ -1,1 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./styles/fonts.scss";
+@import "./styles/colors.scss";
+@import "./styles/general.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bs-body-font-size: 16px;
+}
+
+body {
+  font-size: var(--bs-body-font-size);
+  font-family: 'montserrat';
+}
+
+.nav-link:focus {
+  color: #FFF;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #FFF;
+  background-color: var(--light-pink);
+  border-color: var(--light-pink);
+}
+
+.nav-link {
+  color: var(--light-pink);
+  text-align: center;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--light-pink);
+}
+
+.nav-link.disabled,
+.nav-link:disabled {
+  color: var(--light-gray);
+  font-weight: 400;
+}
+
+.table-borderless>tbody>tr:nth-child(odd)>td,
+.table-borderless>tbody>tr:nth-child(odd)>th {
+  background-color: var(--ultra-light-pink);
+}
+
+table.table-borderless {
+  border-color: var(--double-light-gray);
+}
+
+table.table-borderless>thead>tr>th {
+  background-color: transparent;
+}
+
+.table>:not(:last-child)>:last-child>* {
+  border-bottom: 1px solid var(--double-light-gray);
+  border-top: 1px solid var(--double-light-gray);
+}
+
+table.table-borderless>tbody>tr>td {
+  border-color: var(--double-light-gray);
+}
+
+.tab-content {
+  border: 1px solid var(--double-light-gray);
+  border-top: transparent;
+}
