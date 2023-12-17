@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -10,15 +9,15 @@ import { Router } from '@angular/router';
 })
 
 export class MainPageComponent {
+  @Input() newData: any;
   form: FormGroup;
   content1: string = "ESTOY ACTIVA";
   content2: string = "NO ESTOY ACTIVA";
   tableData: any[] = [];
   tableData2: any[] = [];
-  @Input() newData: any;
   dataApi: any;
 
-  constructor(private fb: FormBuilder, public apiService: ApiService, private router: Router) {
+  constructor(private fb: FormBuilder, public apiService: ApiService) {
     this.form = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       phone: [null, [Validators.required, Validators.maxLength(10)]],
