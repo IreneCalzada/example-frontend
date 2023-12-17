@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
+
 export class MainPageComponent {
   form: FormGroup;
   content1: string = "ESTOY ACTIVA";
@@ -13,8 +16,9 @@ export class MainPageComponent {
   tableData: any[] = [];
   tableData2: any[] = [];
   @Input() newData: any;
+  dataApi: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public apiService: ApiService, private router: Router) {
     this.form = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       phone: [null, [Validators.required, Validators.maxLength(10)]],
@@ -32,7 +36,20 @@ export class MainPageComponent {
 
   sendTableData(event: any): void {
     this.tableData2.push(event);
+    this.getDataTable()
     this.form.reset();
+  }
+
+  getDataTable(): void {
+    this.apiService.getData().subscribe({
+      next: async (response) => {
+        if (response?.AddressList) {
+          this.dataApi = response.AddressList;
+        }
+      }, error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
   sendForm(): void {

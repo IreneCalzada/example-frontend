@@ -61,8 +61,55 @@
                 <label class="light-pink-color fw-bold lh-base my-5" [ngStyle]="{'font-size': '30px'}"> Soy la tabla de
                     la pestaña 1 activa </label>
             </div>
-            <div class="mx-4">
-                <table class="table table-borderless double-light-gray-colorr">
+            <div class="mx-5 table-responsive text-center">
+                <table class="table table-borderless double-light-gray-color">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Id. Dirección</th>
+                            <th scope="col">Id. Origen</th>
+                            <th scope="col">Municipio</th>
+                            <th scope="col">Código Municipio</th>
+                            <th scope="col">C.P. Oficina</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Código Estado</th>
+                            <th scope="col">Colonia</th>
+                            <th scope="col">Id. Colonia</th>
+                            <th scope="col">Tipo Colonia</th>
+                            <th scope="col">Código tipo Colonia</th>
+                            <th scope="col">Código colonia D</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Código C</th>
+                            <th scope="col">Tipo de Zona</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of dataApi; index as i">
+                            <td> {{i+1}} </td>
+                            <td> {{item.City}} </td>
+                            <td> {{item.CityCode}}</td>
+                            <td> {{item.LoadAddressIdentifier}} </td>
+                            <td> {{item.LoadSourceIdentifier}} </td>
+                            <td> {{item.Municipality}} </td>
+                            <td> {{item.MunicipalityCode}} </td>
+                            <td> {{item.OfficeZipC}} </td>
+                            <td> {{item.State}} </td>
+                            <td> {{item.StateCode}} </td>
+                            <td> {{item.Township}} </td>
+                            <td> {{item.TownshipIdentifier}} </td>
+                            <td> {{item.TownshipType}} </td>
+                            <td> {{item.TownshipTypeCode}} </td>
+                            <td> {{item.TownshipZipD}} </td>
+                            <td> {{item.Zip}} </td>
+                            <td> {{item.ZipC}} </td>
+                            <td> {{item.ZoneType}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- <table class="table table-borderless double-light-gray-colorr">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -79,7 +126,7 @@
                             <td> {{data.email}} </td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
             </div>
         </div>
 
@@ -89,34 +136,50 @@
                     tabla de la pestaña 2 activa </label>
             </div>
 
-            <div class="mx-4">
-                <table class="table table-borderless double-light-gray-colorr">
+            <div class="mx-5 table-responsive text-center">
+                <table class="table table-borderless double-light-gray-color">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Teléfono</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Id. Dirección</th>
+                            <th scope="col">Id. Origen</th>
+                            <th scope="col">Municipio</th>
+                            <th scope="col">Código Municipio</th>
+                            <th scope="col">C.P. Oficina</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Código Estado</th>
+                            <th scope="col">Colonia</th>
+                            <th scope="col">Id. Colonia</th>
+                            <th scope="col">Tipo Colonia</th>
+                            <th scope="col">Código tipo Colonia</th>
+                            <th scope="col">Código colonia D</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Código C</th>
+                            <th scope="col">Tipo de Zona</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1</td>
-                            <td> 08/Dic/2023</td>
-                            <td> 0123456789</td>
-                            <td> prueba1@mail.com</td>
-                        </tr>
-                        <tr>
-                            <td> 2</td>
-                            <td> 15/Dic/2023</td>
-                            <td> 0125478456</td>
-                            <td> prueba2@mail.com</td>
-                        </tr>
-                        <tr>
-                            <td> 3</td>
-                            <td> 25/Dic/2023</td>
-                            <td> 5847514256</td>
-                            <td> prueba3@mail.com</td>
+                        <tr *ngFor="let item of dataApi; index as i">
+                            <td> {{i+1}} </td>
+                            <td> {{item.City}} </td>
+                            <td> {{item.CityCode}}</td>
+                            <td> {{item.LoadAddressIdentifier}} </td>
+                            <td> {{item.LoadSourceIdentifier}} </td>
+                            <td> {{item.Municipality}} </td>
+                            <td> {{item.MunicipalityCode}} </td>
+                            <td> {{item.OfficeZipC}} </td>
+                            <td> {{item.State}} </td>
+                            <td> {{item.StateCode}} </td>
+                            <td> {{item.Township}} </td>
+                            <td> {{item.TownshipIdentifier}} </td>
+                            <td> {{item.TownshipType}} </td>
+                            <td> {{item.TownshipTypeCode}} </td>
+                            <td> {{item.TownshipZipD}} </td>
+                            <td> {{item.Zip}} </td>
+                            <td> {{item.ZipC}} </td>
+                            <td> {{item.ZoneType}} </td>
                         </tr>
                     </tbody>
                 </table>

@@ -13,6 +13,7 @@ import { PhoneMaskDirective } from './directives/phone-mask.directive';
 import { InputEmailComponent } from './components/input-email/input-email.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -32,6 +33,7 @@ registerLocaleData(localeEs, 'es');
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
